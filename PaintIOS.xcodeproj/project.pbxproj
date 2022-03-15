@@ -7,18 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0B1DB727DE07ED00AD3C9E /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1DB627DE07ED00AD3C9E /* Line.swift */; };
 		7C40133027DCCDE700D54DD1 /* PaintIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40132F27DCCDE700D54DD1 /* PaintIOSApp.swift */; };
 		7C40133227DCCDE700D54DD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40133127DCCDE700D54DD1 /* ContentView.swift */; };
 		7C40133427DCCDE800D54DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C40133327DCCDE800D54DD1 /* Assets.xcassets */; };
 		7C40133727DCCDE800D54DD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C40133627DCCDE800D54DD1 /* Preview Assets.xcassets */; };
+		7C40133F27DCE55800D54DD1 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40133E27DCE55800D54DD1 /* ImageView.swift */; };
+		7C40134427DCF9C900D54DD1 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40134327DCF9C900D54DD1 /* Figure.swift */; };
+		7CEEEC4B27E099EE00D92419 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEEC4A27E099EE00D92419 /* Rectangle.swift */; };
+		7CEEEC4D27E0A53D00D92419 /* FigureTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEEC4C27E0A53D00D92419 /* FigureTypeView.swift */; };
+		7CEEEC4F27E0C3F600D92419 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEEC4E27E0C3F600D92419 /* Square.swift */; };
+		7CEEEC5127E0C89300D92419 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEEC5027E0C89300D92419 /* Triangle.swift */; };
+		7CEEEC5327E0CACC00D92419 /* Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEEC5227E0CACC00D92419 /* Ellipse.swift */; };
+		7CEEEC5527E0CC7800D92419 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEEC5427E0CC7800D92419 /* Circle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C0B1DB627DE07ED00AD3C9E /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		7C40132C27DCCDE700D54DD1 /* PaintIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaintIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C40132F27DCCDE700D54DD1 /* PaintIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintIOSApp.swift; sourceTree = "<group>"; };
 		7C40133127DCCDE700D54DD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7C40133327DCCDE800D54DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C40133627DCCDE800D54DD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7C40133E27DCE55800D54DD1 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		7C40134327DCF9C900D54DD1 /* Figure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Figure.swift; sourceTree = "<group>"; };
+		7CEEEC4A27E099EE00D92419 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		7CEEEC4C27E0A53D00D92419 /* FigureTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureTypeView.swift; sourceTree = "<group>"; };
+		7CEEEC4E27E0C3F600D92419 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		7CEEEC5027E0C89300D92419 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		7CEEEC5227E0CACC00D92419 /* Ellipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ellipse.swift; sourceTree = "<group>"; };
+		7CEEEC5427E0CC7800D92419 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				7C40132F27DCCDE700D54DD1 /* PaintIOSApp.swift */,
-				7C40133127DCCDE700D54DD1 /* ContentView.swift */,
+				7C40134027DCF6DA00D54DD1 /* Shapes */,
+				7C40133D27DCE54100D54DD1 /* View */,
 				7C40133327DCCDE800D54DD1 /* Assets.xcassets */,
 				7C40133527DCCDE800D54DD1 /* Preview Content */,
 			);
@@ -65,6 +84,30 @@
 				7C40133627DCCDE800D54DD1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7C40133D27DCE54100D54DD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C40133127DCCDE700D54DD1 /* ContentView.swift */,
+				7C40133E27DCE55800D54DD1 /* ImageView.swift */,
+				7CEEEC4C27E0A53D00D92419 /* FigureTypeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7C40134027DCF6DA00D54DD1 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				7C40134327DCF9C900D54DD1 /* Figure.swift */,
+				7C0B1DB627DE07ED00AD3C9E /* Line.swift */,
+				7CEEEC4A27E099EE00D92419 /* Rectangle.swift */,
+				7CEEEC4E27E0C3F600D92419 /* Square.swift */,
+				7CEEEC5027E0C89300D92419 /* Triangle.swift */,
+				7CEEEC5227E0CACC00D92419 /* Ellipse.swift */,
+				7CEEEC5427E0CC7800D92419 /* Circle.swift */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +180,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CEEEC4F27E0C3F600D92419 /* Square.swift in Sources */,
+				7C40133F27DCE55800D54DD1 /* ImageView.swift in Sources */,
+				7CEEEC5327E0CACC00D92419 /* Ellipse.swift in Sources */,
+				7CEEEC4D27E0A53D00D92419 /* FigureTypeView.swift in Sources */,
+				7CEEEC5127E0C89300D92419 /* Triangle.swift in Sources */,
 				7C40133227DCCDE700D54DD1 /* ContentView.swift in Sources */,
+				7CEEEC5527E0CC7800D92419 /* Circle.swift in Sources */,
 				7C40133027DCCDE700D54DD1 /* PaintIOSApp.swift in Sources */,
+				7CEEEC4B27E099EE00D92419 /* Rectangle.swift in Sources */,
+				7C40134427DCF9C900D54DD1 /* Figure.swift in Sources */,
+				7C0B1DB727DE07ED00AD3C9E /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
