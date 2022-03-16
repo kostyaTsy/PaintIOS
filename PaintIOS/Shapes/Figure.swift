@@ -14,21 +14,18 @@ class Figure: ObservableObject, NSCopying {
     var lineWidth: CGFloat = 5
     var color: Color
     
+    var figureType: FigureType
+    
     // Initialiser of class
-    init(lineWidth: CGFloat, color: Color) {
+    init(lineWidth: CGFloat, color: Color, figureType: FigureType) {
         self.lineWidth = lineWidth
         self.color = color
+        self.figureType = figureType
     }
     
     // Copying of instance function
     func copy(with zone: NSZone? = nil) -> Any {
-        return Figure(lineWidth: 5, color: .gray)
-    }
-    
-    
-    // Drawing figure function
-    func path() -> Path {
-        return Path()
+        return Figure(lineWidth: 5, color: .gray, figureType: .none)
     }
     
     // Adding point to coordinates array

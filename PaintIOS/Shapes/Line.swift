@@ -8,21 +8,9 @@
 import Foundation
 import SwiftUI
 
-class Line: Figure {
-    override init(lineWidth: CGFloat, color: Color) {
-        super.init(lineWidth: lineWidth, color: color)
-    }
-    
+class Line: Figure { 
     override func copy(with zone: NSZone? = nil) -> Any {
-        return Line(lineWidth: 5, color: .gray)
-    }
-    
-    override func path() -> Path {
-        var path = Path()
-        
-        path.addLines(coordinates)
-        
-        return path
+        return Line(lineWidth: 5, color: .gray, figureType: .line)
     }
     
     override func addPoints(point: CGPoint) {

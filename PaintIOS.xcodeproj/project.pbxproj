@@ -14,6 +14,8 @@
 		7C40133727DCCDE800D54DD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C40133627DCCDE800D54DD1 /* Preview Assets.xcassets */; };
 		7C40133F27DCE55800D54DD1 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40133E27DCE55800D54DD1 /* ImageView.swift */; };
 		7C40134427DCF9C900D54DD1 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40134327DCF9C900D54DD1 /* Figure.swift */; };
+		7C7F643327E2625000F229D9 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7F643227E2625000F229D9 /* Drawing.swift */; };
+		7C7F643627E2688700F229D9 /* EnumFigureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7F643527E2688700F229D9 /* EnumFigureType.swift */; };
 		7CEEEC4B27E099EE00D92419 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEEC4A27E099EE00D92419 /* Rectangle.swift */; };
 		7CEEEC4D27E0A53D00D92419 /* FigureTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEEC4C27E0A53D00D92419 /* FigureTypeView.swift */; };
 		7CEEEC4F27E0C3F600D92419 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEEC4E27E0C3F600D92419 /* Square.swift */; };
@@ -31,6 +33,8 @@
 		7C40133627DCCDE800D54DD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7C40133E27DCE55800D54DD1 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		7C40134327DCF9C900D54DD1 /* Figure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Figure.swift; sourceTree = "<group>"; };
+		7C7F643227E2625000F229D9 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		7C7F643527E2688700F229D9 /* EnumFigureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumFigureType.swift; sourceTree = "<group>"; };
 		7CEEEC4A27E099EE00D92419 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 		7CEEEC4C27E0A53D00D92419 /* FigureTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureTypeView.swift; sourceTree = "<group>"; };
 		7CEEEC4E27E0C3F600D92419 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
@@ -69,7 +73,9 @@
 		7C40132E27DCCDE700D54DD1 /* PaintIOS */ = {
 			isa = PBXGroup;
 			children = (
+				7C7F643227E2625000F229D9 /* Drawing.swift */,
 				7C40132F27DCCDE700D54DD1 /* PaintIOSApp.swift */,
+				7C7F643427E2686E00F229D9 /* Types */,
 				7C40134027DCF6DA00D54DD1 /* Shapes */,
 				7C40133D27DCE54100D54DD1 /* View */,
 				7C40133327DCCDE800D54DD1 /* Assets.xcassets */,
@@ -108,6 +114,14 @@
 				7CEEEC5427E0CC7800D92419 /* Circle.swift */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		7C7F643427E2686E00F229D9 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				7C7F643527E2688700F229D9 /* EnumFigureType.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,9 +199,11 @@
 				7CEEEC5327E0CACC00D92419 /* Ellipse.swift in Sources */,
 				7CEEEC4D27E0A53D00D92419 /* FigureTypeView.swift in Sources */,
 				7CEEEC5127E0C89300D92419 /* Triangle.swift in Sources */,
+				7C7F643627E2688700F229D9 /* EnumFigureType.swift in Sources */,
 				7C40133227DCCDE700D54DD1 /* ContentView.swift in Sources */,
 				7CEEEC5527E0CC7800D92419 /* Circle.swift in Sources */,
 				7C40133027DCCDE700D54DD1 /* PaintIOSApp.swift in Sources */,
+				7C7F643327E2625000F229D9 /* Drawing.swift in Sources */,
 				7CEEEC4B27E099EE00D92419 /* Rectangle.swift in Sources */,
 				7C40134427DCF9C900D54DD1 /* Figure.swift in Sources */,
 				7C0B1DB727DE07ED00AD3C9E /* Line.swift in Sources */,

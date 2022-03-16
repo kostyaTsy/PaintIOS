@@ -34,6 +34,6 @@ struct FigureTypeView: View {
 
 struct FigureTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        FigureTypeView(currentFig: Rectangle(lineWidth: 2, color: .gray))
+        FigureTypeView(currentFig: Rectangle(lineWidth: 2, color: .gray, figureType: .rectangle))
     }
 }

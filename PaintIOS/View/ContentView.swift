@@ -15,8 +15,10 @@ struct ContentView: View {
     
     @State var isFigChanged: Bool = false
     
-    @State var currentFig: Figure = Line(lineWidth: 2, color: Color(.gray))
+    @State var currentFig: Figure = Line(lineWidth: 2, color: Color(.gray), figureType: .line)
     @State var figures = [Figure]()
+    
+    //var drawing = Drawing(figures: figures)
     
     var body: some View {
         ZStack {
@@ -24,45 +26,44 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 20) {
                     // Line button
                     Button {
-                        print(selectedColor)
-                        currentFig = Line(lineWidth: selectedLineWidth, color: selectedColor)
+                        currentFig = Line(lineWidth: selectedLineWidth, color: selectedColor, figureType: .line)
+                        //var drawing = Drawing(figures: figures)
+                        //drawing.Draw()
                     } label: {
                         ImageView(buttonBgColor: buttonBgColor, imName: "line.diagonal")
                     }
                     
                     // Rectangle button
                     Button {
-                        print(selectedColor)
-                        currentFig = Rectangle(lineWidth: selectedLineWidth, color: selectedColor)
+                        currentFig = Rectangle(lineWidth: selectedLineWidth, color: selectedColor, figureType: .rectangle)
                     } label: {
                         ImageView(buttonBgColor: buttonBgColor, imName: "rectangle")
                     }
                     
                     // Square button
                     Button {
-                        currentFig = Square(lineWidth: selectedLineWidth, color: selectedColor)
+                        currentFig = Square(lineWidth: selectedLineWidth, color: selectedColor, figureType: .square)
                     } label: {
                         ImageView(buttonBgColor: buttonBgColor, imName: "square")
                     }
                     
                     // Triangle button
                     Button {
-                        currentFig = Triangle(lineWidth: selectedLineWidth, color: selectedColor)
+                        currentFig = Triangle(lineWidth: selectedLineWidth, color: selectedColor, figureType: .triangle)
                     } label: {
                         ImageView(buttonBgColor: buttonBgColor, imName: "triangle")
                     }
                     
                     // Ellipse button
                     Button {
-                        currentFig = Ellipse(lineWidth: selectedLineWidth, color: selectedColor)
+                        currentFig = Ellipse(lineWidth: selectedLineWidth, color: selectedColor, figureType: .ellipse)
                     } label: {
                         ImageView(buttonBgColor: buttonBgColor, imName: "oval")
                     }
                     
                     // Circle button
                     Button {
-                        currentFig = Circle(lineWidth: selectedLineWidth, color: selectedColor)
-                        print(currentFig is Rectangle)
+                        currentFig = Circle(lineWidth: selectedLineWidth, color: selectedColor, figureType: .circle)
                     } label: {
                         ImageView(buttonBgColor: buttonBgColor, imName: "circle")
                     }
@@ -73,7 +74,7 @@ struct ContentView: View {
                         .scaleEffect(CGSize(width: 1.5, height: 1.5))
                         .labelsHidden()
                     
-                    // TODO: make deleting of all coordinates array of figures
+                    // Clearing the canvas
                     Button {
                         figures = [Figure]()
                     } label: {
@@ -98,7 +99,9 @@ struct ContentView: View {
                         // Drawing figures
                         // TODO: change to drawing shapes
                         for figure in figures {
-                            let path = figure.path()
+                            //let path = figure.path()
+                            let drawing = Drawing(figure: figure)
+                            let path = drawing.Draw()
                             
                             context.stroke(path, with: .color(figure.color), lineWidth: figure.lineWidth)
                             
@@ -114,7 +117,7 @@ struct ContentView: View {
                         
                         // Checking if starting of drawing (first point of figure)
                         if (value.translation.width + value.translation.height == 0) {
-                            print(type(of: currentFig))
+                            //print(type(of: currentFig))
                             // Copying instance of a Figure class
                             currentFig = currentFig.copy() as! Figure
                             
@@ -129,8 +132,6 @@ struct ContentView: View {
                             figures[index].addPoints(point: newPoint)
                         }
                         isFigChanged.toggle()
-                    }).onEnded({ value in
-                        
                     })
                     )
                 }
