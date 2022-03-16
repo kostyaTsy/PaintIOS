@@ -62,6 +62,7 @@ struct ContentView: View {
                     // Circle button
                     Button {
                         currentFig = Circle(lineWidth: selectedLineWidth, color: selectedColor)
+                        print(currentFig is Rectangle)
                     } label: {
                         ImageView(buttonBgColor: buttonBgColor, imName: "circle")
                     }

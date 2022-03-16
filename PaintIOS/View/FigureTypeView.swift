@@ -12,11 +12,22 @@ struct FigureTypeView: View {
     
     var currentFig: Figure
     var body: some View {
-        if (currentFig is Line) {
+        
+        switch currentFig {
+        case _ as Square:
+            ImageView(buttonBgColor: whiteBg, imName: "square")
+        case _ as Triangle:
+            ImageView(buttonBgColor: whiteBg, imName: "triangle")
+        case _ as Circle:
+            ImageView(buttonBgColor: whiteBg, imName: "circle")
+        case _ as Ellipse:
+            ImageView(buttonBgColor: whiteBg, imName: "oval")
+        case _ as Line:
             ImageView(buttonBgColor: whiteBg, imName: "line.diagonal")
-        }
-        else if (currentFig is Rectangle) {
+        case _ as Rectangle:
             ImageView(buttonBgColor: whiteBg, imName: "rectangle")
+        default:
+            ImageView(buttonBgColor: whiteBg, imName: "trash")
         }
     }
 }
