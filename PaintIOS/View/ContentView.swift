@@ -27,8 +27,6 @@ struct ContentView: View {
                     // Line button
                     Button {
                         currentFig = Line(lineWidth: selectedLineWidth, color: selectedColor, figureType: .line)
-                        //var drawing = Drawing(figures: figures)
-                        //drawing.Draw()
                     } label: {
                         ImageView(buttonBgColor: buttonBgColor, imName: "line.diagonal")
                     }
