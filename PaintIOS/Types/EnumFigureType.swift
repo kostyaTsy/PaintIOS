@@ -8,6 +8,6 @@
 import Foundation
 
 // Enumeration to define type of figure
-enum FigureType {
+enum FigureType: Codable {
     case line, rectangle, square, triangle, ellipse, circle, none
 }

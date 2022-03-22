@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// Class for drawing figures
 class Drawing {
     var figure: Figure
     
