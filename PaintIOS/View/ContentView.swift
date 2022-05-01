@@ -9,26 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedLineWidth: CGFloat = 4
-    @State private var selectedColor: Color = Color(.gray)  //Color(.systemBackground)
+    @State private var selectedColor: Color = Color(.sRGB, red: 0.5, green: 0.5, blue: 0.5, opacity: 1)
     var buttonBgColor: Color = Color(.sRGB, red: 0.921569, green: 0.921569, blue: 0.921569, opacity: 1)
     
     
     @State var isFigChanged: Bool = false
     
     @State var currentFig: Figure = Line(lineWidth: 2, color: Color(.gray), figureType: .line)
-    @State var figures = [Figure]()
     
-    //var drawing = Drawing(figures: figures)
+    var drawingDocument = DrawingDocument()
     
     var body: some View {
         ZStack {
-            HStack {
+            HStack(alignment: .center) {
                 VStack(alignment: .leading, spacing: 20) {
                     // Line button
                     Button {
                         currentFig = Line(lineWidth: selectedLineWidth, color: selectedColor, figureType: .line)
-                        //var drawing = Drawing(figures: figures)
-                        //drawing.Draw()
+                        print(currentFig.color)
+                        
                     } label: {
                         ImageView(buttonBgColor: buttonBgColor, imName: "line.diagonal")
                     }
@@ -76,7 +75,8 @@ struct ContentView: View {
                     
                     // Clearing the canvas
                     Button {
-                        figures = [Figure]()
+                        drawingDocument.figures = [Figure]()
+                        isFigChanged.toggle()
                     } label: {
                         ImageView(buttonBgColor: Color(.white), imName: "trash")
                     }
@@ -98,13 +98,12 @@ struct ContentView: View {
                     Canvas { context, size in
                         // Drawing figures
                         // TODO: change to drawing shapes
-                        for figure in figures {
+                        for figure in drawingDocument.figures {
                             //let path = figure.path()
                             let drawing = Drawing(figure: figure)
                             let path = drawing.Draw()
                             
                             context.stroke(path, with: .color(figure.color), lineWidth: figure.lineWidth)
-                            
                         }
                         
                     }
@@ -117,7 +116,6 @@ struct ContentView: View {
                         
                         // Checking if starting of drawing (first point of figure)
                         if (value.translation.width + value.translation.height == 0) {
-                            //print(type(of: currentFig))
                             // Copying instance of a Figure class
                             currentFig = currentFig.copy() as! Figure
                             
@@ -125,13 +123,17 @@ struct ContentView: View {
                             currentFig.lineWidth = selectedLineWidth
                             currentFig.addPoints(point: newPoint)
                             
-                            figures.append(currentFig)
-                            print(figures)
+                            drawingDocument.figures.append(currentFig)
+                            print(drawingDocument.figures)
                         } else {
-                            let index = figures.count - 1
-                            figures[index].addPoints(point: newPoint)
+                            let index = drawingDocument.figures.count - 1
+                            drawingDocument.figures[index].addPoints(point: newPoint)
                         }
                         isFigChanged.toggle()
+                    })
+                    // Saving figures
+                    .onEnded({ Value in
+                        drawingDocument.save()
                     })
                     )
                 }
